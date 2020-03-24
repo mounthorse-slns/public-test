@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipDefaultLibCheck": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "lib": [ "es6", "es2016.array.include", "es2017.object", "dom" ],
+    "types": [ "node", "jquery", "bootstrap" ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "exclude": [ "bin", "node_modules" ],
+  "atom": { "rewriteTsconfig": false }
+}

@@ -1,0 +1,360 @@
+﻿/* Material Icons Styles (http://google.github.io/material-design-icons/#icon-font-for-the-web) */
+/* Rules for sizing the icon. */
+.material-icons.md-12 { font-size: 12px; }
+.material-icons.md-14 { font-size: 14px; }
+.material-icons.md-16 { font-size: 16px; }
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-20 { font-size: 20px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-26 { font-size: 26px; }
+.material-icons.md-32 { font-size: 32px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-56 { font-size: 56px; }
+.material-icons.md-64 { font-size: 64px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+$orange-600: #FB8C00;
+$red-500: #F44336;
+$green-500: #4CAF50;
+$white-1000: #FFFFFF;
+$white-1000-50: rgba(255, 255, 255, 0.5);
+$black-1000: #000000;
+
+.material-icons.md-orange-600 { color: $orange-600; }
+.material-icons.md-red-500 { color: $red-500; }
+.material-icons.md-green-500 { color: $green-500; }
+.material-icons.md-white { color: $white-1000; }
+.material-icons.md-white-50 { color: $white-1000-50 }
+.material-icons.md-black { color: $black-1000; }
+/*----------------------------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'), 
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'), 
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sanslight') format('svg');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'grafica_type_1';
+    src: url('../fonts/GRAFIKA-TYPE.1.ttf') format('truetype');
+    font-style: normal;
+}
+
+
+html, body {
+    height: 100%;
+    font-family: 'grafica_type_1';
+    overflow-x: auto; // needed because router animation which cause the horizontal scrollbar to show up
+    overflow-y: hidden;
+}
+
+// BEGIN Override boostrap defaults
+.navbar.bg-inverse {
+    background-color: #000000 !important
+}
+
+.btn {
+    cursor: pointer;
+    font-family: 'grafica_type_1' !important;
+
+    &.top-right {
+        position: absolute;
+        top: 5rem;
+        right: 2.5rem;
+    }
+
+    &.bottom-right {
+        position: absolute;
+        bottom: 3rem;
+        right: 2.5rem;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    &.btn-circle {
+        width: 1.875rem;
+        height: 1.875rem;
+        padding: 0;
+        border-radius: 1rem;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.42857;
+
+        &.btn-sm {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        &.btn-lg {
+            width: 4.375rem;
+            height: 4.375rem;
+            border-radius: 2.1875rem;
+            font-size: 24px;
+            line-height: 1.33;
+        }
+    }
+}
+
+// removed class from bootstrap 4.0, added again for compatibility with current validation
+// https://github.com/bootstrap-ruby/bootstrap_form/pull/370
+.has-danger {           
+    color: #d9534f;
+}
+
+ngb-progressbar {
+    .progress {
+        margin-top: 0.5rem !important;
+    }
+}
+// END Override boostrap defaults
+
+// BEGIN Fix ngx-select-ex component
+.has-danger .ngx-select {
+    &:focus {
+        outline-color: #dc3545;
+    }
+}
+
+.has-danger .ngx-select .form-control {
+    border-color: #dc3545;
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+}
+// END Fix ngx-select-ex component
+
+$navbarHeight: 60px;
+$bodyPaddingTop: $navbarHeight;
+$bodyPaddingBottom: 0px;
+.body-container {
+    padding-top: $bodyPaddingTop;
+    padding-bottom: $bodyPaddingBottom;
+    height: 100%;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    position: relative;
+    padding: 1em 1em 0;
+}
+
+.page-container {
+    max-width: 92%;
+}
+
+@media (min-width: 576px) {
+    .modal-sm {
+        max-width: 350px;
+    }
+}
+
+@media (min-width: 992px) {
+    .modal-md {
+        max-width: 650px;
+    }
+}
+
+form.left-bordered-validation-feedback {
+    .ng-valid[required], .ng-valid.required {
+        border-left: 5px solid #42A948; /* green */
+    }
+
+    .ng-invalid:not(form) {
+        border-left: 5px solid #a94442; /* red */
+    }
+}
+
+input[type=number].form-control-danger {
+    padding-right: 0.75em;
+}
+
+.filters-container {
+    padding: .5em 0;
+}
+
+.table-logo-container {
+    .table-logo {
+        max-width: 26px;
+
+        &:not(:first-child) {
+            margin-left: .5em;
+        }
+    }
+}
+
+.table-text-overflow {
+    td {
+        max-width: 16.25rem;
+        overflow: hidden;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+}
+
+.text-overflow {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+.small-logo {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.office-color {
+    height: 1em;
+    width: 3em;
+}
+
+.scroll-content {
+    overflow-y: scroll;
+
+    &.no-scroll-bar {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.align-center {
+    &.vertical:not(.horizontal) {
+        display: flex;
+        align-items: center;
+    }
+
+    &.horizontal:not(.vertical) {
+        text-align: center;
+    }
+
+    &:not(.vertical):not(.horizontal) {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.valign-center {
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.align-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+
+    > * {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+
+.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+.auto-height {
+    height: auto !important;
+}
+
+.loader {
+    text-align: center;
+    padding: .25em;
+    display: inline-block;
+    vertical-align: top;
+    /*
+     * Set the color of the icon
+     */
+    svg path,
+    svg rect {
+        fill: #025AA5;
+    }
+
+    &.overlap {
+        position: absolute;
+        top: -9px;
+        left: -6px;
+    }
+}
+
+.euro {
+    font-weight: bold;
+    font-family: serif;
+}
+
+img {
+    &.inverted {
+        filter: invert(100%);
+        -webkit-filter: invert(100%);
+    }
+}
+
+.hover {
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.075) !important;
+    }
+}
+
+.no-hover {
+    background-color: rgba(0, 0, 0, 0) !important
+}
+
+.clickable {
+    cursor: pointer;
+
+    &.link {
+        color: #007bff;
+        text-decoration: none;
+        background-color: transparent;
+
+        &:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    }
+}
+
+.page-item.active .page-link {
+    z-index: 0;
+}
+
+.modal {
+    z-index: 10000; // above ng-busy
+}
+
+.ng-busy.ng-busy-offset {
+    top: -16px;
+}
+
+.ng-busy-default-spinner,.ng-busy-backdrop {
+    position: fixed; // old: absolute
+}

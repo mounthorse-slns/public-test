@@ -1,0 +1,56 @@
+﻿$panelHeight: 41rem;
+$functionsHeight: 2.5rem;
+$functionsMarginBottom: 1rem;
+$ckEditorToolbarHeight: 2.375rem;
+
+$subjectContainerMarginTop: .4rem;
+$subjectContainerMarginBottom: 1rem;
+$subjectContainerHeight: 2.375rem; // 38px; (see .form-control class style)
+
+
+.bottom-panel {
+    height: $panelHeight;
+
+    .contact-list-container {
+        .contact-list-functions {
+            height: $functionsHeight;
+            margin-bottom: 1em !important;
+        }
+
+        .contact-list {
+            border: lightgrey 1px solid;
+            border-radius: 2px;
+            padding: 5px;
+            height: calc(100% - #{$functionsHeight + $functionsMarginBottom});
+        }
+    }
+
+    .subject-container {
+        margin-top: $subjectContainerMarginTop;
+        margin-bottom: $subjectContainerMarginBottom;
+    }
+
+    .editor-container {
+        margin-bottom: 0;
+    }
+}
+
+.recipient-list {
+    border: lightgrey 1px solid;
+    border-radius: 2px;
+    height: 5.625rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .badge {
+        display: inline-table;
+
+        span {
+            font-weight: normal;
+        }
+    }
+}
+
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: calc(#{$panelHeight - $ckEditorToolbarHeight - $subjectContainerMarginTop - $subjectContainerMarginBottom - $subjectContainerHeight + .2rem});
+}
