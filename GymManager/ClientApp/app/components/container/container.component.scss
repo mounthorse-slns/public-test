@@ -1,0 +1,30 @@
+﻿$navbarHeight: 60px;
+$footerHeight: 1.5625rem;
+
+header {
+}
+
+$viewHeight: calc(100% - #{$navbarHeight} + 30px);
+main {
+    min-height: $viewHeight;
+    max-height: $viewHeight;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 2em;
+}
+
+footer {
+    height: $footerHeight;
+    padding: 3px 10px;
+    border-top: 1px solid #ddd;
+    font-size: 0.8rem;
+}
+
+.backdrop {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 80;
+}

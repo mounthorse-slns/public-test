@@ -1,0 +1,22 @@
+﻿<div [ngBusy]="{busy: isBusy, message: 'Caricamento...', wrapperClass: 'ng-busy ng-busy-offset'}"></div>
+
+<h3>{{title}}</h3>
+<hr />
+
+<div class="row mt-1 bottom-panel">
+    <div class="col-8">
+        <form id="form" name="form" (ngSubmit)="f.form.valid" #f="ngForm" [formGroup]="form" class="needs-validation" novalidate>
+
+            <div id="text" name="text"
+                 formControlName="text"
+                 [ngxSummernote]="ngxSummernoteConfig"
+                 [ngxSummernoteDisabled]="false"
+                 (summernoteInit)="summernoteInit($event)">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="view-side-form">
+    <router-outlet></router-outlet>
+</div>
